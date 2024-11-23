@@ -10,7 +10,7 @@ require('dotenv').config();
 app.use(express.json());
 
 // MongoDB connection
-mongoose.connect('mongodb://localhost:27017/mydatabase', {
+mongoose.connect('mongodb://localhost:27017/sommelierpath', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => console.log('Connected to MongoDB'))
