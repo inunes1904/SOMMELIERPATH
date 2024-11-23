@@ -4,6 +4,9 @@ const userRoutes = require('./routes/userRoutes');
 
 const app = express();
 const BASE_URL = '/api/v1';
+
+require('dotenv').config();
+
 app.use(express.json());
 
 // MongoDB connection
