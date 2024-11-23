@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const userRoutes = require('./routes/userRoutes');
 
 const app = express();
+const BASE_URL = '/api/v1';
 app.use(express.json());
 
 // MongoDB connection
@@ -13,7 +14,7 @@ mongoose.connect('mongodb://localhost:27017/mydatabase', {
   .catch(err => console.error('Database connection error:', err));
 
 // Routes
-app.use('/api/users', userRoutes);
+app.use( `${BASE_URL}/users`, userRoutes);
 
 // Start server
 const PORT = 3000;
