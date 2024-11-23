@@ -1,5 +1,7 @@
+const userService = require('../services/userService');
+
 class UserController {
-  // Other methods...
+
   async getAllUsers(req, res) {
     try {
       const users = await userService.getAllUsers();
