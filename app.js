@@ -35,18 +35,18 @@ app.get('/', (req, res) => {
     '</ul>\n' +
     '\n' +
     '<ul>\n' +
-    '  <li><a href="/configuracao">GET /configuracoes</a> - Fetch a list of all wine-tasting configurations</li>\n' +
-    '  <li><a href="/configuracao/:id">GET /configuracoes/:id</a> - Fetch details of a specific wine-tasting configuration</li>\n' +
-    '  <li><a href="/configuracao">POST /configuracoes</a> - Create a new wine-tasting configuration</li>\n' +
-    '  <li><a href="/configuracao/:id">PUT /configuracoes/:id</a> - Update a wine-tasting configuration</li>\n' +
-    '  <li><a href="/configuracao/:id">DELETE /configuracoes/:id</a> - Delete a wine-tasting configuration</li>\n' +
+    '  <li><a href="/configuracao">GET /configuracao</a> - Fetch a list of all wine-tasting configurations</li>\n' +
+    '  <li><a href="/configuracao/:id">GET /configuracao/:id</a> - Fetch details of a specific wine-tasting configuration</li>\n' +
+    '  <li><a href="/configuracao">POST /configuracao</a> - Create a new wine-tasting configuration</li>\n' +
+    '  <li><a href="/configuracao/:id">PUT /configuracao/:id</a> - Update a wine-tasting configuration</li>\n' +
+    '  <li><a href="/configuracao/:id">DELETE /configuracao/:id</a> - Delete a wine-tasting configuration</li>\n' +
     '</ul>' +
     '<ul>' +
-    '<li><a href="/avaliacao">GET /avaliacoes</a> - Fetch a list of all evaluations</li>' +
-    '<li><a href="/avaliacao/:id">GET /avaliacoes/:id</a> - Fetch details of a specific evaluation</li>' +
-    '<li><a href="/avaliacao">POST /avaliacoes</a> - Create a new evaluation</li>' +
-    '<li><a href="/avaliacao/:id">PUT /avaliacoes/:id</a> - Update an evaluation</li>' +
-    '<li><a href="/avaliacao/:id">DELETE /avaliacoes/:id</a> - Delete an evaluation</li>' +
+    '<li><a href="/avaliacao">GET /avaliacao</a> - Fetch a list of all evaluations</li>' +
+    '<li><a href="/avaliacao/:id">GET /avaliacao/:id</a> - Fetch details of a specific evaluation</li>' +
+    '<li><a href="/avaliacao">POST /avaliacao</a> - Create a new evaluation</li>' +
+    '<li><a href="/avaliacao/:id">PUT /avaliacao/:id</a> - Update an evaluation</li>' +
+    '<li><a href="/avaliacao/:id">DELETE /avaliacao/:id</a> - Delete an evaluation</li>' +
     '</ul>' +
     '<ul>'+
       '<li><a href="/users">GET /users</a> - Fetch a list of all users</li>'+
