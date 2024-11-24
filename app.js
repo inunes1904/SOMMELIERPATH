@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const userRoutes = require('./routes/userRoutes');
 const authRoutes = require('./routes/authRoutes');
+const configuracaoRoutes = require('./routes/configuracaoRoutes');
 const cors = require('cors');
 
 const app = express();
@@ -22,9 +23,10 @@ mongoose.connect('mongodb://localhost:27017/sommelierpath', {
 // Routes
 app.use( `${BASE_URL}/users`, userRoutes);
 app.use( `${BASE_URL}`, authRoutes);
+app.use( `${BASE_URL}/configuracao`, configuracaoRoutes);
 
 // Start server
 const PORT = 3000;
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`Server is running http://localhost:${PORT}`);
 });
