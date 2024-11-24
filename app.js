@@ -5,20 +5,22 @@ const authRoutes = require('./routes/authRoutes');
 const configuracaoRoutes = require('./routes/configuracaoRoutes');
 const cors = require('cors');
 
+require('dotenv').config();
+
 const app = express();
 const BASE_URL = '/api/v1';
-
-require('dotenv').config();
+const DB_URI_FINAL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@sommpath.vp5dp.mongodb.net/?retryWrites=true&w=majority&appName=SommPath`;
 
 app.use(express.json());
 app.use(cors()); // Allow cross-origin requests
 
 // MongoDB connection
-mongoose.connect('mongodb://localhost:27017/sommelierpath', {
+mongoose.connect(DB_URI_FINAL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Database connection error:', err));
+
 
 // Routes
 app.use( `${BASE_URL}/users`, userRoutes);
