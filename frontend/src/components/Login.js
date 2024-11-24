@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const Login = () => {
+const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
   const handleLogin = async (e) => {
-    e.preventDefault(); // Prevent form submission
+    e.preventDefault();
     setError('');
     setSuccess('');
 
@@ -18,10 +18,9 @@ const Login = () => {
         password,
       });
 
-      // Save the token to localStorage or a cookie
       localStorage.setItem('token', response.data.token);
-
       setSuccess('Login successful!');
+      onLogin(); // Notify parent component about login
     } catch (err) {
       setError(
         err.response?.data?.message || 'An error occurred. Please try again.'
@@ -33,6 +32,7 @@ const Login = () => {
     <div style={styles.container}>
       <h2>Login</h2>
       <form onSubmit={handleLogin} style={styles.form}>
+        {/* Input fields */}
         <div style={styles.inputGroup}>
           <label>Email:</label>
           <input
@@ -62,6 +62,7 @@ const Login = () => {
     </div>
   );
 };
+
 
 const styles = {
   container: {
