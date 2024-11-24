@@ -21,6 +21,10 @@ mongoose.connect(DB_URI_FINAL, {
 }).then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Database connection error:', err));
 
+app.get('/', (req, res) => {
+  res.send('Welcome to SOMMPATH API!');
+});
+
 
 // Routes
 app.use( `${BASE_URL}/users`, userRoutes);
