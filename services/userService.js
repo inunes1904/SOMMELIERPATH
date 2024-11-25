@@ -1,4 +1,5 @@
 const userRepository = require('../data/userRepository');
+const {hasRole} = require("../middlewares/authMiddleware");
 
 class UserService {
   async getAllUsers() {
@@ -13,7 +14,8 @@ class UserService {
     return await userRepository.create(userData);
   }
 
-  async updateUser(id, userData) {
+  async updateUser(id, userData, previousRole) {
+    if (!hasRole('admin')) userData.role = previousRole;
     return await userRepository.update(id, userData);
   }
 

@@ -32,11 +32,28 @@ class UserController {
 
   async updateUser(req, res) {
     try {
-      const user = await userService.updateUser(req.params.id, req.body);
+      var previousRole = req.user.role;
+      const user = await userService.updateUser(req.params.id, req.body, previousRole);
       if (!user) return res.status(404).json({ message: 'User not found' });
       res.status(200).json(user);
     } catch (error) {
       res.status(400).json({ error: error.message });
+    }
+  }
+
+  async updateUserRole(req, res) {
+    try {
+      const { role } = req.body;
+      if (!role || !['user', 'sommelier', 'admin'].includes(role)) {
+        return res.status(400).json({ message: 'Invalid role specified' });
+      }
+
+      const user = await userService.updateUser(req.params.id, { role });
+      if (!user) return res.status(404).json({ message: 'User not found' });
+
+      res.status(200).json({ message: 'Role updated successfully', user });
+    } catch (error) {
+      res.status(500).json({ error: error.message });
     }
   }
 
@@ -50,21 +67,7 @@ class UserController {
     }
   }
 
-  async updateUserRole(req, res) {
-    try {
-      const { role } = req.body;
-      if (!role || !['user', 'admin'].includes(role)) {
-        return res.status(400).json({ message: 'Invalid role specified' });
-      }
 
-      const user = await userService.updateUser(req.params.id, { role });
-      if (!user) return res.status(404).json({ message: 'User not found' });
-
-      res.status(200).json({ message: 'Role updated successfully', user });
-    } catch (error) {
-      res.status(500).json({ error: error.message });
-    }
-  }
 }
 
 module.exports = new UserController();
