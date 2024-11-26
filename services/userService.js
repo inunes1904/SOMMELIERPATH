@@ -15,8 +15,7 @@ class UserService {
   }
 
   async updateUser(id, userData, previousRole) {
-    if (!hasRole('admin')) userData.role = previousRole;
-    return await userRepository.update(id, userData);
+    if (!hasRole('admin')) return await userRepository.update(id, userData);
   }
 
   async deleteUser(id) {

@@ -32,8 +32,7 @@ class UserController {
 
   async updateUser(req, res) {
     try {
-      var previousRole = req.user.role;
-      const user = await userService.updateUser(req.params.id, req.body, previousRole);
+      const user = await userService.updateUser(req.params.id, req.body);
       if (!user) return res.status(404).json({ message: 'User not found' });
       res.status(200).json(user);
     } catch (error) {
