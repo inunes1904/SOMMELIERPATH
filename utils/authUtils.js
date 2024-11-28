@@ -25,6 +25,7 @@ const verifyToken = (req, res, next) => {
     next();
   });
 };
+
 // This route will get a user's information, but only if they are authenticated
 const getUserInfo = async (req, res) => {
   const user = await User.findById(req.user.userId); // userId comes from the token
