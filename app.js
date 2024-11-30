@@ -33,6 +33,7 @@ app.use(cors()); // Allow cross-origin requests
     app.use(`${BASE_URL}/users`, userRoutes);
     app.use(`${BASE_URL}`, authRoutes);
     app.use(`${BASE_URL}/configuracao`, configuracaoRoutes);
+    app.use(`${BASE_URL}/avaliacao`, avaliacaoRoutes);
 
     // Start the server only after the database connection
     const PORT = 3000;
