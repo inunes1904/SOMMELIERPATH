@@ -20,7 +20,6 @@ app.use(cors()); // Allow cross-origin requests
   try {
     // Connect to MongoDB
     await mongoose.connect(DB_URI_FINAL, {
-      useUnifiedTopology: true,
       serverSelectionTimeoutMS: 60000,
     });
     console.log('Connected to MongoDB');
