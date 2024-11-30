@@ -20,6 +20,7 @@ mongoose.connect(DB_URI_FINAL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     serverSelectionTimeoutMS: 60000,
+    bufferCommands: false, // Disable buffering
 }).then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Database connection error:', err));
 
