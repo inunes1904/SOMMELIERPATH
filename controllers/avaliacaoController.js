@@ -1,9 +1,8 @@
 const avaliacaoService = require('../services/avaliacaoService');
-const configuracaoService = require("../services/configuracaoService");
 
-class AvaliacaoService {
+class AvaliacaoController {
 
-  async createAvaliacao(req, res) {
+  async create(req, res) {
     try {
       const { userId } = req.user; // Extract userId from authenticated request
       const data = { ...req.body, userId };
@@ -53,3 +52,6 @@ class AvaliacaoService {
     }
   }
 }
+
+
+module.exports = new AvaliacaoController();
