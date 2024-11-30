@@ -55,6 +55,7 @@ const welcomePage = `
       </header>
       <main>
         <p>Explore the available routes below:</p>
+        <p>Consider the base route: sommelierpath-2.onrender.com/api/v1</p>
 
         <section>
           <h2 class="section-title">User Routes</h2>
