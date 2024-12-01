@@ -55,46 +55,46 @@ const welcomePage = `
       </header>
       <main>
         <p>Explore the available routes below:</p>
-        <p>Consider the base route: sommelierpath-2.onrender.com/api/v1</p>
+        <p>Consider the base route: sommelierpath-2.onrender.com</p>
 
         <section>
           <h2 class="section-title">User Routes</h2>
           <ul>
-            <li><a href="/users">GET /users</a> - Fetch a list of all users</li>
-            <li><a href="/users/:id">GET /users/:id</a> - Fetch details of a specific user</li>
-            <li><a href="/users">POST /users</a> - Create a new user</li>
-            <li><a href="/users/:id">PUT /users/:id</a> - Update a user role (admin only)</li>
-            <li><a href="/users/:id">DELETE /users/:id</a> - Delete a user (admin only)</li>
+            <li><a href="/api/v1/users">GET /users</a> - Fetch a list of all users</li>
+            <li><a href="/api/v1/users/:id">GET /users/:id</a> - Fetch details of a specific user</li>
+            <li><a href="/api/v1/users">POST /users</a> - Create a new user</li>
+            <li><a href="/api/v1/users/:id">PUT /users/:id</a> - Update a user role (admin only)</li>
+            <li><a href="/api/v1/users/:id">DELETE /users/:id</a> - Delete a user (admin only)</li>
           </ul>
         </section>
 
         <section>
           <h2 class="section-title">Configuracao Routes</h2>
           <ul>
-            <li><a href="/configuracao">GET /configuracao</a> - Fetch all wine-tasting configurations</li>
-            <li><a href="/configuracao/:id">GET /configuracao/:id</a> - Fetch details of a specific configuration</li>
-            <li><a href="/configuracao">POST /configuracao</a> - Create a new configuration</li>
-            <li><a href="/configuracao/:id">PUT /configuracao/:id</a> - Update a configuration</li>
-            <li><a href="/configuracao/:id">DELETE /configuracao/:id</a> - Delete a configuration</li>
+            <li><a href="/api/v1/configuracao">GET /configuracao</a> - Fetch all wine-tasting configurations</li>
+            <li><a href="/api/v1/configuracao/:id">GET /configuracao/:id</a> - Fetch details of a specific configuration</li>
+            <li><a href="/api/v1/configuracao">POST /configuracao</a> - Create a new configuration</li>
+            <li><a href="/api/v1/configuracao/:id">PUT /configuracao/:id</a> - Update a configuration</li>
+            <li><a href="/api/v1/configuracao/:id">DELETE /configuracao/:id</a> - Delete a configuration</li>
           </ul>
         </section>
 
         <section>
           <h2 class="section-title">Avaliacao Routes</h2>
           <ul>
-            <li><a href="/avaliacao">GET /avaliacao</a> - Fetch all evaluations</li>
-            <li><a href="/avaliacao/:id">GET /avaliacao/:id</a> - Fetch details of a specific evaluation</li>
-            <li><a href="/avaliacao">POST /avaliacao</a> - Create a new evaluation</li>
-            <li><a href="/avaliacao/:id">PUT /avaliacao/:id</a> - Update an evaluation</li>
-            <li><a href="/avaliacao/:id">DELETE /avaliacao/:id</a> - Delete an evaluation</li>
+            <li><a href="/api/v1/avaliacao">GET /avaliacao</a> - Fetch all evaluations</li>
+            <li><a href="/api/v1/avaliacao/:id">GET /avaliacao/:id</a> - Fetch details of a specific evaluation</li>
+            <li><a href="/api/v1/avaliacao">POST /avaliacao</a> - Create a new evaluation</li>
+            <li><a href="/api/v1/avaliacao/:id">PUT /avaliacao/:id</a> - Update an evaluation</li>
+            <li><a href="/api/v1/avaliacao/:id">DELETE /avaliacao/:id</a> - Delete an evaluation</li>
           </ul>
         </section>
 
         <section>
           <h2 class="section-title">Authentication Routes</h2>
           <ul>
-            <li><a href="/login">POST /login</a> - User login to authenticate and receive a token</li>
-            <li><a href="/user">GET /user</a> - Retrieve user information (requires valid token)</li>
+            <li><a href="/api/v1/login">POST /login</a> - User login to authenticate and receive a token</li>
+            <li><a href="/api/v1/user">GET /user</a> - Retrieve user information (requires valid token)</li>
           </ul>
         </section>
       </main>
