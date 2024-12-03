@@ -6,7 +6,7 @@ class AvaliacaoController {
     try {
       const { userId } = req.user; // Extract userId from authenticated request
       const data = { ...req.body, userId };
-      const avaliacao = await avaliacaoService.createAvaliacao(data);
+      const avaliacao = await data.create(data);
       res.status(201).json(avaliacao);
     } catch (error) {
       res.status(500).json({ error: error.message });
@@ -15,7 +15,7 @@ class AvaliacaoController {
 
   async getAll(req, res) {
     try{
-      const avaliacoes= await avaliacaoService.getAllAvaliacoes();
+      const avaliacoes =  await avaliacaoService.getAllAvaliacoes();
       res.status(200).json(avaliacoes);
     }catch(error){
       res.status(500).json({ error: error.message });

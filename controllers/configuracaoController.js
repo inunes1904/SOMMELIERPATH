@@ -1,6 +1,7 @@
 const configuracaoService = require('../services/configuracaoService');
 
 class ConfiguracaoController {
+
   async create(req, res) {
     try {
       const { userId } = req.user; // Extract userId from authenticated request
