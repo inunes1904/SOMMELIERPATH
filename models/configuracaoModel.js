@@ -16,6 +16,7 @@ const ConfiguracaoSchema = new mongoose.Schema({
   numeroParticipantes: { type: Number, required: true },
   duracaoProva: { type: String, required: true },
   localizacao: { type: String, required: true },
+  finalizado: { type: String, required: true, default: false },
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, // Reference to User model
 }, { timestamps: true }); // Automatically add createdAt and updatedAt fields
 
