@@ -1,4 +1,4 @@
-const avalicaoRepository = require('../data/avaliacaoRepository');
+const avaliacaoRepository = require('../data/avaliacaoRepository');
 
 class AvaliacaoService {
   async createAvaliacao(data) {
@@ -14,7 +14,7 @@ class AvaliacaoService {
     if (!avaliacao) {
       throw new Error('Avaliação não encontrada.');
     }
-    return configuracao;
+    return avaliacao;
   }
 
   async updateAvaliacao(id, data) {
@@ -22,7 +22,7 @@ class AvaliacaoService {
     if (!avaliacao) {
       throw new Error('Avaliação não encontrada.');
     }
-    return configuracao;
+    return avaliacao;
   }
 
   async deleteAvaliacao(id) {

@@ -1,12 +1,13 @@
 const express = require('express');
 const avaliacaoController = require('../controllers/avaliacaoController');
 const {hasRole} = require("../middlewares/authMiddleware");
+const {verifyToken} = require("../utils/authUtils");
 
 
 const router = express.Router();
 
 // Protect routes for `sommelier` and `admin` roles
-router.use(hasRole(['sommelier', 'admin', 'user']));
+router.use(verifyToken);
 
 router.post('/', hasRole('sommelier', 'admin'), avaliacaoController.create); // Create a new configuration
 router.get('/', hasRole('sommelier', 'admin'), avaliacaoController.getAll); // Get all configurations

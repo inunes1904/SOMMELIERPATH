@@ -6,7 +6,7 @@ class AvaliacaoController {
     try {
       const { userId } = req.user; // Extract userId from authenticated request
       const data = { ...req.body, userId };
-      const avaliacao = await data.create(data);
+      const avaliacao = await avaliacaoService.createAvaliacao(data);
       res.status(201).json(avaliacao);
     } catch (error) {
       res.status(500).json({ error: error.message });
