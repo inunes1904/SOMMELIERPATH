@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const ConfiguracaoSchema = new mongoose.Schema({
+  nomeProva: { type: String, required: true },
   tipoProva: { type: String, required: true },
   pesoAroma: { type: Number, required: true },
   pesoCor: { type: Number, required: true },

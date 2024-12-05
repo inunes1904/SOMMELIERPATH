@@ -11,7 +11,8 @@ require('dotenv').config();
 
 const app = express();
 const BASE_URL = '/api/v1';
-const DB_URI_FINAL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@sommpath.vp5dp.mongodb.net/?retryWrites=true&w=majority&appName=SommPath`;
+const DB_URI_FINAL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@sommpath.vp5dp.mongodb.net/sommpathdb?retryWrites=true&w=majority&appName=SommPath`;
+const PORT = 3000;
 
 app.use(express.json());
 app.use(cors()); // Allow cross-origin requests
@@ -37,7 +38,7 @@ app.use(cors()); // Allow cross-origin requests
     app.use(`${BASE_URL}/avaliacao`, avaliacaoRoutes);
 
     // Start the server only after the database connection
-    const PORT = 3000;
+
     app.listen(PORT, () => {
       console.log(`Server is running at http://localhost:${PORT}`);
     });
