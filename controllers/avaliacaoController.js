@@ -1,7 +1,6 @@
 const avaliacaoService = require('../services/avaliacaoService');
 const configuracaoService = require('../services/configuracaoService');
 const feedbackService = require('../services/feedbackService');
-const {config} = require("dotenv");
 const {getStringFeedback} = require("../utils/feedbackUtils");
 
 class AvaliacaoController {

@@ -5,14 +5,22 @@ class FeedbackService {
     return await feedbackRepository.create(data);
   }
 
-  async getAllFeedback() {
+  async getAllFeedbacks() {
     return await feedbackRepository.findAll();
   }
 
   async getFeedbackById(id) {
     const feedback = await feedbackRepository.findById(id);
     if (!feedback) {
-      throw new Error('Avaliação não encontrado.');
+      throw new Error('Feedback não encontrado.');
+    }
+    return feedback;
+  }
+
+  async findFeedbackByAvaliacaoId(avaliacaoId) {
+    const feedback = await feedbackRepository.findFeedbackByAvaliacaoId(avaliacaoId);
+    if (!feedback) {
+      throw new Error('Feedback não encontrado.');
     }
     return feedback;
   }
