@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const User = require("../models/userModel");
 
 // Secret key for signing the JWT token
 const JWT_SECRET = process.env.JWT_SECRET;

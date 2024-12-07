@@ -6,13 +6,12 @@ const {verifyToken} = require("../utils/authUtils");
 
 const router = express.Router();
 
-// Protect routes for `sommelier` and `admin` roles
 router.use(verifyToken);
 
-router.post('/', hasRole('sommelier', 'admin'), avaliacaoController.create); // Create a new configuration
-router.get('/', hasRole('sommelier', 'admin'), avaliacaoController.getAll); // Get all configurations
-router.get('/:id', hasRole('sommelier', 'admin'), avaliacaoController.getById); // Get a single configuration
-router.put('/:id',hasRole('sommelier', 'admin'), avaliacaoController.update); // Update a configuration
-router.delete('/:id',hasRole('sommelier', 'admin'), avaliacaoController.delete); // Delete a configuration
+router.post('/', avaliacaoController.create); // Create a new avaliacao
+router.get('/', avaliacaoController.getAll); // Get all avaliacao
+router.get('/:id', avaliacaoController.getById); // Get a single avaliacao
+router.put('/:id', hasRole('admin'), avaliacaoController.update); // Update a avaliacao
+router.delete('/:id', hasRole('admin'), avaliacaoController.delete); // Delete a avaliacao
 
 module.exports = router;

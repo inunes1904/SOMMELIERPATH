@@ -1,4 +1,8 @@
 const avaliacaoService = require('../services/avaliacaoService');
+const configuracaoService = require('../services/configuracaoService');
+const feedbackService = require('../services/feedbackService');
+const {config} = require("dotenv");
+const {getStringFeedback} = require("../utils/feedbackUtils");
 
 class AvaliacaoController {
 
@@ -7,7 +11,11 @@ class AvaliacaoController {
       const { userId } = req.user; // Extract userId from authenticated request
       const data = { ...req.body, userId };
       const avaliacao = await avaliacaoService.createAvaliacao(data);
-      res.status(201).json(avaliacao);
+      const configuracao = await configuracaoService.getConfiguracaoById(data.configuracaoId);
+      let result = getStringFeedback(data, configuracao);
+      const feedback = await feedbackService.createFeedback(
+        {"descricaoFeedback": result, "avaliacaoId": avaliacao._id, "userId":userId} );
+      res.status(201).json({avaliacao, feedback});
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
