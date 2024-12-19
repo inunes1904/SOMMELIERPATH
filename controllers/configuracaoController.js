@@ -51,6 +51,16 @@ class ConfiguracaoController {
       res.status(404).json({ error: error.message });
     }
   }
+
+  async getParameters(req, res) {
+    try {
+      const { id } = req.params;
+      await configuracaoService.deleteConfiguracao(id);
+      res.status(200).json({ message: 'Configuração excluída com sucesso.' });
+    } catch (error) {
+      res.status(404).json({ error: error.message });
+    }
+  }
 }
 
 module.exports = new ConfiguracaoController();

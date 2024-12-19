@@ -10,7 +10,8 @@ const router = express.Router();
 
 // Define routes with role-based access hasRole('sommelier', 'admin'),
 router.post('/', configuracaoController.create);
-router.get('/', configuracaoController.getAll);
+router.get('/all', configuracaoController.getAll);
+router.get('/', configuracaoController.getParameters);
 router.get('/:id', configuracaoController.getById);
 router.put('/:id', configuracaoController.update);
 router.delete('/:id', configuracaoController.delete);
