@@ -54,9 +54,8 @@ class ConfiguracaoController {
 
   async getParameters(req, res) {
     try {
-      const { id } = req.params;
-      await configuracaoService.deleteConfiguracao(id);
-      res.status(200).json({ message: 'Configuração excluída com sucesso.' });
+      const parameters = await configuracaoService.getParameters();
+      res.status(200).json(parameters);
     } catch (error) {
       res.status(404).json({ error: error.message });
     }

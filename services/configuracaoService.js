@@ -32,6 +32,14 @@ class ConfiguracaoService {
     }
     return configuracao;
   }
+
+  async getParameters(req, res) {
+    const parameters = await configuracaoRepository.getParameters();
+    if (!parameters) {
+      throw new Error('Sem parametros para mostrar.');
+    }
+    return parameters;
+  }
 }
 
 module.exports = new ConfiguracaoService();

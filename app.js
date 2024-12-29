@@ -11,7 +11,7 @@ const welcomePage = require("./utils/welcomePageAPI");
 require('dotenv').config();
 
 const app = express();
-const BASE_URL = '/api/v1';
+const BASE_URL = '';
 const DB_URI_FINAL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@sommpath.vp5dp.mongodb.net/sommpathdb?retryWrites=true&w=majority&appName=SommPath`;
 const PORT = 3000;
 
@@ -35,7 +35,7 @@ app.use(cors()); // Allow cross-origin requests
 
     app.use(`${BASE_URL}/users`, userRoutes);
     app.use(`${BASE_URL}`, authRoutes);
-    app.use(`${BASE_URL}/configuracao`, configuracaoRoutes);
+    app.use(`${BASE_URL}`, configuracaoRoutes);
     app.use(`${BASE_URL}/avaliacao`, avaliacaoRoutes);
     app.use(`${BASE_URL}/feedback`, feedbackRoutes);
 

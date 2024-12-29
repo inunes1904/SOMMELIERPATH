@@ -9,9 +9,9 @@ const router = express.Router();
 // router.use(verifyToken);
 
 // Define routes with role-based access hasRole('sommelier', 'admin'),
-router.post('/', configuracaoController.create);
-router.get('/all', configuracaoController.getAll);
-router.get('/', configuracaoController.getParameters);
+router.post('/deploy-atividade', configuracaoController.create);
+router.get('/atividade/all', configuracaoController.getAll);
+router.get('/json-params-atividade', configuracaoController.getParameters);
 router.get('/:id', configuracaoController.getById);
 router.put('/:id', configuracaoController.update);
 router.delete('/:id', configuracaoController.delete);
