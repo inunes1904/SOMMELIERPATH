@@ -40,6 +40,14 @@ class ConfiguracaoService {
     }
     return parameters;
   }
+
+  async getAnalyticsActivity(req, res) {
+    const parameters = await configuracaoRepository.getAnalyticsActivity();
+    if (!parameters) {
+      throw new Error('Sem parametros para mostrar.');
+    }
+    return parameters;
+  }
 }
 
 module.exports = new ConfiguracaoService();

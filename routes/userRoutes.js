@@ -5,10 +5,10 @@ const {verifyToken} = require("../utils/authUtils");
 
 const router = express.Router();
 
-router.get('/', verifyToken, hasRole('admin'), userController.getAllUsers);
-router.get('/:id',verifyToken,  hasRole('admin'), userController.getUserById);
-router.post('/', userController.createUser);
-router.put('/:id', verifyToken,  userController.updateUser);
-router.delete('/:id', verifyToken, hasRole('admin'), userController.deleteUser);
+router.get('/users', verifyToken, hasRole('admin'), userController.getAllUsers);
+router.get('/users/:id',verifyToken,  hasRole('admin'), userController.getUserById);
+router.post('/users', userController.createUser);
+router.put('/users/:id', verifyToken,  userController.updateUser);
+router.delete('/users/:id', verifyToken, hasRole('admin'), userController.deleteUser);
 
 module.exports = router;

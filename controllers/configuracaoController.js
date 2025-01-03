@@ -60,6 +60,15 @@ class ConfiguracaoController {
       res.status(404).json({ error: error.message });
     }
   }
+
+  async getAnalyticsActivity(req, res) {
+    try {
+      const parameters = await configuracaoService.getAnalyticsActivity();
+      res.status(200).json(parameters);
+    } catch (error) {
+      res.status(404).json({ error: error.message });
+    }
+  }
 }
 
 module.exports = new ConfiguracaoController();

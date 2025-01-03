@@ -71,9 +71,11 @@ const welcomePage = `
         <section>
           <h2 class="section-title">Configuracao Routes</h2>
           <ul>
-            <li><a href="/api/v1/configuracao">GET /configuracao</a> - Fetch all wine-tasting configurations</li>
+            <li><a href="/api/v1/deploy-atividade">POST /deploy-atividade</a> - Create a new activity configuration</li>
+            <li><a href="/api/v1/configuracao">GET /configuracao</a> - Fetch all wine-tasting activities configurations</li>
             <li><a href="/api/v1/configuracao/:id">GET /configuracao/:id</a> - Fetch details of a specific configuration</li>
-            <li><a href="/api/v1/configuracao">POST /configuracao</a> - Create a new configuration</li>
+            <li><a href="/api/v1/json-params-atividade">GET /json-params-atividade</a> - GET the parameters of configuration activity</li>
+            <li><a href="/api/v1/lista-analytics-atividade">GET /lista-analytics-atividade</a> - GET the parameters of Analytics of an activity</li>
             <li><a href="/api/v1/configuracao/:id">PUT /configuracao/:id</a> - Update a configuration</li>
             <li><a href="/api/v1/configuracao/:id">DELETE /configuracao/:id</a> - Delete a configuration</li>
           </ul>
@@ -87,6 +89,16 @@ const welcomePage = `
             <li><a href="/api/v1/avaliacao">POST /avaliacao</a> - Create a new evaluation</li>
             <li><a href="/api/v1/avaliacao/:id">PUT /avaliacao/:id</a> - Update an evaluation</li>
             <li><a href="/api/v1/avaliacao/:id">DELETE /avaliacao/:id</a> - Delete an evaluation</li>
+          </ul>
+        </section>
+        <section>
+          <h2 class="section-title">Feedback Routes</h2>
+          <ul>
+            <li><a href="/api/v1/feedback">GET /feedback</a> - Fetch all feedbacks</li>
+            <li><a href="/api/v1/feedback/:id">GET /feedback/:id</a> - Fetch details of a specific feedback</li>
+            <li><a href="/api/v1/feedback">POST /feedback</a> - Create a new feedback</li>
+            <li><a href="/api/v1/feedback/:id">PUT /feedback/:id</a> - Update an feedback</li>
+            <li><a href="/api/v1/feedback/:id">DELETE /feedback/:id</a> - Delete an feedback</li>
           </ul>
         </section>
 
