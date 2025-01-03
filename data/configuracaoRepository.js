@@ -1,5 +1,5 @@
 const Configuracao = require('../models/configuracaoModel');
-const Analytics =  require('../models/AnalyticsModel');
+const Analytics =  require('../models/analyticsModel');
 
 class ConfiguracaoRepository {
   async create(data) {
