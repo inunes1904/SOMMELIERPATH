@@ -1,8 +1,25 @@
 const avaliacaoRepository = require('../data/avaliacaoRepository');
 
 class AvaliacaoService {
+  constructor() {
+    this.observers = [];
+  }
+
+  addObserver(observer) {
+    this.observers.push(observer);
+  }
+
+  notifyObservers(data) {
+    this.observers.forEach((observer) => observer.update(data));
+  }
+
   async createAvaliacao(data) {
-    return await avaliacaoRepository.create(data);
+    const avaliacao = await avaliacaoRepository.create(data);
+
+    // Notify all observers
+    this.notifyObservers({ avaliacao, inputData: data });
+
+    return avaliacao;
   }
 
   async getAllAvaliacoes() {

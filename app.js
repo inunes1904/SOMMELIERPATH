@@ -5,6 +5,8 @@ const avaliacaoRoutes = require('./routes/avaliacaoRoutes');
 const feedbackRoutes = require('./routes/feedbackRoutes');
 const authRoutes = require('./routes/authRoutes');
 const configuracaoRoutes = require('./routes/configuracaoRoutes');
+const FeedbackObserver = require('./observers/feedbackObserver');
+const avaliacaoService = require('./services/avaliacaoService');
 const cors = require('cors');
 const welcomePage = require("./utils/welcomePageAPI");
 
@@ -18,10 +20,12 @@ const PORT = 3000;
 app.use(express.json());
 app.use(cors()); // Allow cross-origin requests
 
+// Register the FeedbackObserver with AvaliacaoService
+avaliacaoService.addObserver(new FeedbackObserver());
+
 // MongoDB connection and server initialization
 (async () => {
   try {
-    // Connect to MongoDB
     await mongoose.connect(DB_URI_FINAL, {
       serverSelectionTimeoutMS: 60000,
     });
@@ -39,14 +43,12 @@ app.use(cors()); // Allow cross-origin requests
     app.use(`${BASE_URL}`, avaliacaoRoutes);
     app.use(`${BASE_URL}`, feedbackRoutes);
 
-    // Start the server only after the database connection
-
+    // Start the server
     app.listen(PORT, () => {
       console.log(`Server is running at http://localhost:${PORT}`);
     });
-
   } catch (err) {
     console.error('Database connection error:', err);
-    process.exit(1); // Exit the application if the connection fails
+    process.exit(1);
   }
 })();
