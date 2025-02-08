@@ -13,9 +13,9 @@ const welcomePage = require("./utils/welcomePageAPI");
 require('dotenv').config();
 
 const app = express();
-const BASE_URL = '/api/v1/';
+const BASE_URL = process.env.BASE_URL || '/api/v1/';
 const DB_URI_FINAL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@sommpath.vp5dp.mongodb.net/sommpathdb?retryWrites=true&w=majority&appName=SommPath`;
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors()); // Allow cross-origin requests
